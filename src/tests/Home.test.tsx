@@ -5,6 +5,8 @@ import renderWithRouter from './helpers/renderWithRouter';
 import CATEGORIES from './mocks/Categories';
 
 describe('Testando /home', () => {
+  afterEach(() => jest.clearAllMocks());
+
   describe('Titulo', () => {
     it('verifica se o titulo aparece na tela', () => {
       renderWithRouter(<Home />);
