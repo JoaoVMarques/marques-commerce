@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ICategories from '../interfaces/ICategories';
 import { Form } from 'react-bootstrap';
 import ProductsContext from '../context/ProductsContext';
-import IProductsContext from '../interfaces/IProductsContext';
+import { IProductsContext } from '../interfaces/IProductsContext';
 
 
 function Categories(props: { categories: ICategories[] }) {

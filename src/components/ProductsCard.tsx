@@ -1,11 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Card } from 'react-bootstrap';
+import { IProducts } from '../interfaces/IProductsContext';
 
-function ProductsCard(props: { name: string }) {
-  const { name } = props;
+function ProductsCard(props: { product: IProducts }) {
+  const { product } = props;
   return (
     <Card style={ { width: '18rem' } }>
-      <Card.Title>{name}</Card.Title>
+      <Card.Body>
+        <Card.Img variant="top" src={ product.thumbnail } />
+        <Card.Title>{product.title}</Card.Title>
+      </Card.Body>
     </Card>
   );
 }

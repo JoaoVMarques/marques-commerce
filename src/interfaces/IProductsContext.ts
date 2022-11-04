@@ -1,11 +1,10 @@
-interface IProducts {
+export interface IProducts {
   id: string,
   title: string,
+  thumbnail: string,
 }
 
-interface IProductsContext {
+export interface IProductsContext {
   products: IProducts[] | null;
   setProductsAPI: (category: string) => Promise<void>;
 }
-
-export default IProductsContext;

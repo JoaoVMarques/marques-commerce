@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Categories from '../components/Categories';
-import ProductsCard from '../components/Products';
+import Products from '../components/Products';
 import ICategories from '../interfaces/ICategories';
 import fetchCategories from '../services/fetchCategories';
 
@@ -18,7 +18,9 @@ function Home() {
     <>
       <h1>Marques-commerce</h1>
       { <Categories categories={ categories } /> }
-      { <ProductsCard /> }
+      <div>
+        { <Products /> }
+      </div>
     </>
   );
 }
