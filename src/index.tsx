@@ -4,13 +4,16 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import RoutesComponent from './routes/Routes';
+import ProductsProvider from './Providers/ProductsProvider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <BrowserRouter>
-    <RoutesComponent />
-  </BrowserRouter>
+  <ProductsProvider>
+    <BrowserRouter>
+      <RoutesComponent />
+    </BrowserRouter>
+  </ProductsProvider>
 );
 reportWebVitals();
