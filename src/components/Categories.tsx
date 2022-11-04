@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import ICategories from '../interfaces/ICategories';
 import { Form } from 'react-bootstrap';
-import fetchProducts from '../services/fetchProducts';
 import ProductsContext from '../context/ProductsContext';
 import IProductsContext from '../interfaces/IProductsContext';
 

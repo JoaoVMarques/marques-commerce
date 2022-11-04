@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Card } from 'react-bootstrap';
 
-function ProductsCard() {
+function ProductsCard(props: { name: string }) {
+  const { name } = props;
   return (
     <Card style={ { width: '18rem' } }>
-      <Card.Title>titulo</Card.Title>
+      <Card.Title>{name}</Card.Title>
     </Card>
   );
 }
