@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import ICategories from '../interfaces/ICategories';
-import { Form } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 import ProductsContext from '../context/ProductsContext';
 import { IProductsContext } from '../interfaces/IProductsContext';
 
@@ -13,15 +13,16 @@ function Categories(props: { categories: ICategories[] }) {
     <form>
       { categories.map((category) =>
         (
-          <Form.Check 
+          <Dropdown.Item
             key={ category.id }
             id={ category.id }
-            value={ category.name }
             label={ category.name }
             onClick={ () => setProductsAPI(category.id) }
             type="radio"
             name="category"
-          />
+          > 
+            { category.name }
+          </Dropdown.Item>
         ))}
     </form>
   );

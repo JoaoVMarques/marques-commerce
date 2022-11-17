@@ -1,7 +1,7 @@
 import React, { useState, FunctionComponent } from 'react';
 import ProductsContext from '../context/ProductsContext';
-import BaseLayoutProps from '../interfaces/IBaseProps';
 import { IProducts } from '../interfaces/IProductsContext';
+import { BaseLayoutProps } from '../interfaces/IProps';
 import fetchProducts from '../services/fetchProducts';
 
 const ProductsProvider: FunctionComponent<BaseLayoutProps> = (props) => {
