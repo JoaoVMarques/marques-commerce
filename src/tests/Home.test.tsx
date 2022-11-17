@@ -23,6 +23,12 @@ describe('Testando /home', () => {
     it('As categorias são chamadas com sucesso', async () => {
       jest.spyOn(global, 'fetch').mockImplementation(mockFetch);
       renderWithRouter(<Home />);
+      const categoryButton = screen.getByRole('button', {
+        name: /categorias/i
+      });
+      expect(categoryButton).toBeInTheDocument();
+      fireEvent.click(categoryButton);
+
       const agroCategory = await screen.findByText(/Agro/i);
       expect(agroCategory).toBeInTheDocument();
     });
@@ -32,6 +38,12 @@ describe('Testando /home', () => {
     it('Ao clicar nas categorias vao aparecer cards na tela', async () => {
       jest.spyOn(global, 'fetch').mockImplementation(mockFetch);
       renderWithRouter(<Home />);
+      const categoryButton = screen.getByRole('button', {
+        name: /categorias/i
+      });
+      expect(categoryButton).toBeInTheDocument();
+      fireEvent.click(categoryButton);
+
       const agroCategory = await screen.findByText(/Agro/i);
       expect(agroCategory).toBeInTheDocument();
       await act(async() => {
