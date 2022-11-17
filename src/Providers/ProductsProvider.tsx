@@ -1,14 +1,16 @@
 import React, { useState, FunctionComponent } from 'react';
 import ProductsContext from '../context/ProductsContext';
 import BaseLayoutProps from '../interfaces/IBaseProps';
+import { IProducts } from '../interfaces/IProductsContext';
 import fetchProducts from '../services/fetchProducts';
 
 const ProductsProvider: FunctionComponent<BaseLayoutProps> = (props) => {
   const { children } = props;
-  const [products, setProducts] = useState(null);
+  const [products, setProducts] = useState<IProducts[] | []>([]);
 
   const setProductsAPI = async (category: string) => {
-    setProducts(await fetchProducts.getAll(category));
+    const products = await fetchProducts.getAll(category);
+    setProducts(products as IProducts[]);
   };
 
   const contextValue = {
