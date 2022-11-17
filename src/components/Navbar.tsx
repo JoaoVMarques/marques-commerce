@@ -1,22 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DropdownButton } from 'react-bootstrap';
-import Products from './Products';
+import { DropdownButton, Navbar } from 'react-bootstrap';
 import Categories from './Categories';
 import { IPropsNavbar } from '../interfaces/IProps';
 
-function Navbar(props: IPropsNavbar) {
+function NavbarComponent(props: IPropsNavbar) {
   const { categories } = props;
   return(
-    <>
-      <h1>Marques-commerce</h1>
+    <Navbar>
+      <Navbar.Brand><h1>Marques-commerce</h1></Navbar.Brand>
       <DropdownButton id="dropdown-categories" title="Categorias" variant="secondary">
         { <Categories categories={ categories } /> }
       </DropdownButton>
-      <div>
-        { <Products /> }
-      </div>
-    </>
+    </Navbar>
   );
 }
 
@@ -27,4 +23,4 @@ Navbar.propTypes = {
   }))
 };
 
-export default Navbar;
+export default NavbarComponent;

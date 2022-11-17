@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../components/Navbar';
+import NavbarComponent from '../components/Navbar';
+import Products from '../components/Products';
 import ICategories from '../interfaces/ICategories';
 import fetchCategories from '../services/fetchCategories';
 
@@ -14,7 +15,10 @@ function Home() {
   }, []);
 
   return (
-    <Navbar categories={ categories } />
+    <>
+      <NavbarComponent categories={ categories } />
+      { <Products /> }
+    </>
   );
 }
 
