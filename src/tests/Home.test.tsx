@@ -5,7 +5,6 @@ import renderWithRouter from './helpers/renderWithRouter';
 import mockFetch from './mocks/MockFetch';
 import { act } from 'react-dom/test-utils';
 import CARDS from './mocks/Cards';
-import cardsType from '../types/cardsType';
 
 describe('Testando /home', () => {
   afterEach(() => {
@@ -22,7 +21,7 @@ describe('Testando /home', () => {
 
   describe('Categorias', () => {
     it('As categorias são chamadas com sucesso', async () => {
-      jest.spyOn(global, 'fetch').mockImplementation(mockFetch as any);
+      jest.spyOn(global, 'fetch').mockImplementation(mockFetch);
       renderWithRouter(<Home />);
       const agroCategory = await screen.findByText(/Agro/i);
       expect(agroCategory).toBeInTheDocument();
@@ -31,7 +30,7 @@ describe('Testando /home', () => {
 
   describe('Cards', () => {
     it('Ao clicar nas categorias vao aparecer cards na tela', async () => {
-      jest.spyOn(global, 'fetch').mockImplementation(mockFetch as any);
+      jest.spyOn(global, 'fetch').mockImplementation(mockFetch);
       renderWithRouter(<Home />);
       const agroCategory = await screen.findByText(/Agro/i);
       expect(agroCategory).toBeInTheDocument();
