@@ -5,7 +5,7 @@ import { IProducts } from '../interfaces/IProductsContext';
 function ProductsCard(props: { product: IProducts }) {
   const { product } = props;
   return (
-    <Card>
+    <Card className='product-card'>
       <Card.Img variant="top" src={ product.thumbnail } />
       <hr />
       <Card.Body>
