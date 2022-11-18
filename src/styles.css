@@ -10,3 +10,8 @@
 .card{
 transition:.3s;
 }
+
+.card-img-top {
+  height: 15vw;
+  object-fit: scale-down;
+}
