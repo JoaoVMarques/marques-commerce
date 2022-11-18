@@ -6,7 +6,7 @@ function ProductsCard(props: { product: IProducts }) {
   const { product } = props;
   return (
     <Card className='product-card'>
-      <Card.Img variant="top" src={ product.thumbnail } />
+      <Card.Img variant="top" src={ product.picture } />
       <hr />
       <Card.Body>
         <Card.Title>R${product.price}</Card.Title>

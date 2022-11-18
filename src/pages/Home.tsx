@@ -6,6 +6,7 @@ import fetchCategories from '../services/fetchCategories';
 
 function Home() {
   const [ categories, setCategories ] = useState<ICategories[]>([]);
+  
   const fetchAPI = async() => {
     setCategories(await fetchCategories.getAll());
   };

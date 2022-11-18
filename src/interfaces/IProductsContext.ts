@@ -1,8 +1,9 @@
 export interface IProducts {
   id: string,
   title: string,
-  thumbnail: string,
+  picture: string,
   price: number,
+  thumbnail_id: string,
 }
 
 export interface IProductsContext {
