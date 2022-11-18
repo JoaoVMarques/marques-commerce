@@ -2,6 +2,7 @@ export interface IProducts {
   id: string,
   title: string,
   thumbnail: string,
+  price: number,
 }
 
 export interface IProductsContext {

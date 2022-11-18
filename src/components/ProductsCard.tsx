@@ -5,10 +5,12 @@ import { IProducts } from '../interfaces/IProductsContext';
 function ProductsCard(props: { product: IProducts }) {
   const { product } = props;
   return (
-    <Card style={ { width: '10rem' } }>
+    <Card>
+      <Card.Img variant="top" src={ product.thumbnail } />
+      <hr />
       <Card.Body>
-        <Card.Img variant="top" src={ product.thumbnail } />
-        <Card.Title>{product.title}</Card.Title>
+        <Card.Title>R${product.price}</Card.Title>
+        <Card.Text>{product.title}</Card.Text>
       </Card.Body>
     </Card>
   );

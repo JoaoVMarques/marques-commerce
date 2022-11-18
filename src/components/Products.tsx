@@ -7,10 +7,16 @@ import ProductsCard from './ProductsCard';
 function Products() {
   const { products } = useContext(ProductsContext) as IProductsContext;
   return (
-    <Container>
+    <Container className='p-5'>
       <Row>
         { products && products.map((product) => (
-          <Col key={ product.id }>
+          <Col
+            className='d-flex align-items-stretch mb-4' 
+            xs={ 6 }
+            sm={ 4 }
+            md={ 3 }
+            key={ product.id }
+          >
             <ProductsCard
               product={ product }
             />
