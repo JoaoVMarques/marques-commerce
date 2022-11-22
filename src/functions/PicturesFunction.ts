@@ -2,7 +2,7 @@ import { IPictures } from '../interfaces/IPictures';
 import { IProducts } from '../interfaces/IProductsContext';
 import fetchPictures from '../services/fetchPictures';
 
-const getProductPicture = async (products : IProducts[]) => {
+const get = async (products : IProducts[]) => {
   const thumbsId = products.map((product) => product.thumbnail_id).join(',');
   const pictures: IPictures[] = await fetchPictures.getAll(thumbsId);
   const refatoredPictures = refatoringPicture(pictures);
@@ -14,5 +14,5 @@ const refatoringPicture = (pictures: IPictures[]) => {
 };
 
 export default {
-  getProductPicture,
+  get,
 };

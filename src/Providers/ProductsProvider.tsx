@@ -12,9 +12,8 @@ const ProductsProvider: FunctionComponent<BaseLayoutProps> = (props) => {
 
   const setProductsAPI = async (category: string) => {
     const productsObject: IProducts[] = await fetchProducts.getAll(category);
-    const pictures: string[] = await PicturesFunction.getProductPicture(productsObject);
+    const pictures: string[] = await PicturesFunction.get(productsObject);
     const products = await ProductsFunction.mergeWithPic(productsObject, pictures);
-    console.log(products);
     setProducts(products as IProducts[]);
   };
 

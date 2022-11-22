@@ -17,7 +17,7 @@ function Products() {
             md={ 3 }
             key={ product.id }
           >
-            <ProductsCard 
+            <ProductsCard
               product={ product }
             />
           </Col>
