@@ -20,7 +20,12 @@ function Items() {
 
   return (
     <div>
-      { product && (<h3>{product.title}</h3>) }
+      { product && (
+        <>
+          <h3>{product.title}</h3>
+          <img src={ product.pictures[0].url } />
+        </>
+      ) }
     </div>
   );
 }
