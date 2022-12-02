@@ -4,12 +4,12 @@ import IProductsDetails from '../interfaces/IProductsDetails';
 import fetchProductDetails from '../services/fetchProductDetails';
 
 function Items() {
-  const [test, settest] = useState<IProductsDetails>();
+  const [product, setProduct] = useState<IProductsDetails>();
   const { id } = useParams();
 
   const fetchAPI = async() => {
     if(id) {
-      settest(await fetchProductDetails.get(id));
+      setProduct(await fetchProductDetails.get(id));
     }
   };
 
@@ -20,7 +20,7 @@ function Items() {
 
   return (
     <div>
-      { test && (<h3>{test.title}</h3>) }
+      { product && (<h3>{product.title}</h3>) }
     </div>
   );
 }
