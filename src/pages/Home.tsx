@@ -1,20 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import NavbarComponent from '../components/Navbar';
 import Products from '../components/Products';
-import ICategories from '../interfaces/ICategories';
-import fetchCategories from '../services/fetchCategories';
+import CategoriesContext from '../context/CategoriesContext';
+import { ICategoriesContext } from '../interfaces/ICategoriesContext';
 
 function Home() {
-  const [ categories, setCategories ] = useState<ICategories[]>([]);
-  
-  const fetchAPI = async() => {
-    setCategories(await fetchCategories.getAll());
-  };
-
-  useEffect(() => {
-    fetchAPI();
-  }, []);
-
+  const { categories } = useContext(CategoriesContext) as ICategoriesContext;
   return (
     <>
       <NavbarComponent categories={ categories } />

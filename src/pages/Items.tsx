@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import IProductsDetails from '../interfaces/IProductsDetails';
 import fetchProductDetails from '../services/fetchProductDetails';
@@ -21,10 +22,10 @@ function Items() {
   return (
     <div>
       { product && (
-        <>
-          <h3>{product.title}</h3>
+        <Container>
+          <h4>{product.title}</h4>
           <img src={ product.pictures[0].url } />
-        </>
+        </Container>
       ) }
     </div>
   );
