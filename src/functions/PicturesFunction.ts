@@ -5,12 +5,7 @@ import fetchPictures from '../services/fetchPictures';
 const get = async (products : IProducts[]) => {
   const thumbsId = products.map((product) => product.thumbnail_id).join(',');
   const pictures: IPictures[] = await fetchPictures.getAll(thumbsId);
-  const refatoredPictures = refatoringPicture(pictures);
-  return refatoredPictures;
-};
-
-const refatoringPicture = (pictures: IPictures[]) => {
-  return pictures.map((picture) => picture.variations[0].url);
+  return pictures;
 };
 
 export default {

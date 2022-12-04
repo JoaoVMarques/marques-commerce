@@ -3,5 +3,6 @@ export interface IVariations {
 }
 
 export interface IPictures {
+  id: string,
   variations: IVariations[],
 }
