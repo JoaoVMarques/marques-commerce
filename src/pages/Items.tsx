@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import BuyButtons from '../components/BuyButtons';
 import NavbarComponent from '../components/Navbar';
 import CategoriesContext from '../context/CategoriesContext';
 import { ICategoriesContext } from '../interfaces/ICategoriesContext';
@@ -35,6 +36,7 @@ function Items() {
             <Col>
               <h4>{product.title}</h4>
               <p className='fs-3'>R$ {product.price}</p>
+              <BuyButtons />
             </Col>
           </Row>
         </Container>

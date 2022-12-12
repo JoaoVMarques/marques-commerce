@@ -16,3 +16,7 @@ transition:.3s;
   height: 15vw;
   object-fit: scale-down;
 }
+
+.fixed-button {
+  width: 200px !important;
+}
