@@ -34,6 +34,7 @@ function Items() {
             </Col>
             <Col>
               <h4>{product.title}</h4>
+              <p className='fs-3'>R$ {product.price}</p>
             </Col>
           </Row>
         </Container>
