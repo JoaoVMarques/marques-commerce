@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import NavbarComponent from '../components/Navbar';
 import CategoriesContext from '../context/CategoriesContext';
@@ -27,9 +27,15 @@ function Items() {
     <div>
       <NavbarComponent categories={ categories } />
       { product && (
-        <Container>
-          <h4>{product.title}</h4>
-          <img src={ product.pictures[0].url } />
+        <Container className='mt-3'>
+          <Row>
+            <Col>
+              <img src={ product.pictures[0].url } />
+            </Col>
+            <Col>
+              <h4>{product.title}</h4>
+            </Col>
+          </Row>
         </Container>
       ) }
     </div>
