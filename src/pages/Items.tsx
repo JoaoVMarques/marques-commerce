@@ -6,16 +6,19 @@ import NavbarComponent from '../components/Navbar';
 import CategoriesContext from '../context/CategoriesContext';
 import { ICategoriesContext } from '../interfaces/ICategoriesContext';
 import IProductsDetails from '../interfaces/IProductsDetails';
+import fetchDescription from '../services/fetchDescription';
 import fetchProductDetails from '../services/fetchProductDetails';
 
 function Items() {
   const { categories } = useContext(CategoriesContext) as ICategoriesContext;
   const [product, setProduct] = useState<IProductsDetails>();
+  const [description, setDescription] = useState();
   const { id } = useParams();
 
   const fetchAPI = async() => {
     if(id) {
       setProduct(await fetchProductDetails.get(id));
+      setDescription(await fetchDescription.get(id));
     }
   };
 
@@ -38,6 +41,9 @@ function Items() {
               <p className='fs-3'>R$ {product.price}</p>
               <BuyButtons />
             </Col>
+          </Row>
+          <Row>
+            <p>{description}</p>
           </Row>
         </Container>
       ) }
