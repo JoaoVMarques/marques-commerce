@@ -1,5 +1,6 @@
 import CARDS from './Cards';
 import CATEGORIES from './Categories';
+import ITEMDETAIL from './itemDetails';
 import PICTURES from './Pictures';
 
 
@@ -18,6 +19,11 @@ const mockFetch = (link: RequestInfo | URL): Promise<Response> => {
   if (url.includes('https://api.mercadolibre.com/pictures?ids=')) {
     return Promise.resolve({
       json: () => Promise.resolve(PICTURES)
+    } as Response);
+  }
+  if (url.includes('https://api.mercadolibre.com/items?ids=')) {
+    return Promise.resolve({
+      json: () => Promise.resolve(ITEMDETAIL)
     } as Response);
   }
   throw new Error('URL não existente no mock');
