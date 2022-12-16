@@ -42,8 +42,12 @@ function Items() {
               <BuyButtons />
             </Col>
           </Row>
+          <hr />
           <Row>
-            <p>{description}</p>
+            <Col md={ 6 }>
+              <h2>Descrição</h2>
+              <p>{description}</p>
+            </Col>
           </Row>
         </Container>
       ) }
