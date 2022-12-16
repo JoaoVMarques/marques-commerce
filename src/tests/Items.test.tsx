@@ -11,7 +11,7 @@ describe('Testando /Items', () => {
   });
 
   describe('Items', () => {
-    it('Ao clicar nas categorias vão aparecer cards na tela', async () => {
+    it('Ao clicar no item vai ser redirecionado para a página do próprio', async () => {
       jest.spyOn(global, 'fetch').mockImplementation(mockFetch);
       renderWithRouter(<App />);
       const categoryButton = screen.getByRole('button', {
@@ -23,7 +23,7 @@ describe('Testando /Items', () => {
       const agroCategory = await screen.findByText(/Agro/i);
       expect(agroCategory).toBeInTheDocument();
       await act(async() => {
-        fireEvent.click(await screen.findByText(/Agro/i));
+        fireEvent.click(agroCategory);
       });
       const itemName = /Máquina De Solda Inverter Trato Tin160 Verde/i;
       const itemCard = await screen.findByText(itemName);
@@ -35,6 +35,31 @@ describe('Testando /Items', () => {
         name: /comprar agora/i
       });
       expect(buyButton).toBeInTheDocument();
+      const nameItem = await screen.findByText(itemName);
+      expect(nameItem).toBeInTheDocument();
+    });
+  });
+
+  describe('Descrição', () => {
+    it('Ao entrar na página o item tem descrição', async () => {
+      jest.spyOn(global, 'fetch').mockImplementation(mockFetch);
+      renderWithRouter(<App />);
+      const categoryButton = screen.getByRole('button', {
+        name: /categorias/i
+      });
+      fireEvent.click(categoryButton);
+      const agroCategory = await screen.findByText(/Agro/i);
+      await act(async() => {
+        fireEvent.click(agroCategory);
+      });
+      const itemName = /Máquina De Solda Inverter Trato Tin160 Verde/i;
+      const itemCard = await screen.findByText(itemName);
+      await act(async() => {
+        fireEvent.click(itemCard);
+      });
+      const itemdescription = 'PLACEHOLDER para descrição do item no mock';
+      const description = await screen.findByText(itemdescription);
+      expect(description).toBeInTheDocument();
     });
   });
 });
