@@ -5,7 +5,22 @@ Futuramente no projeto deixarei fotos aqui 📷
 Esse projeto é um site que lista diversos produtos vindo da API do mercado livre.
 
 ## Porque?
-Para melhorar minhas hábilidades em typescript e requisição de api, além de treinar o css, estilos novos e botar em meu portifólio.
+Para melhorar minhas hábilidades em typescript e requisição de api, além de treinar o css e novos estilos.
+
+## 🚀 Instalação do projeto
+<details>
+  <summary>Instalação e execução com Docker</summary>
+  
+  #### 1 - Clone o repositório
+  - Use o comando ```git clone git@github.com:JoaoVMarques/marques-commerce.git```
+  - Entre na pasta ```cd marques-commerce```
+
+  #### 2 - Instale as dependencias
+  - Instale as depencias ```npm i```
+  
+  #### 3 - Inicialize o projeto
+  - Para iniciar o projeto utilize ```npm start```
+</details>
 
 ## 🏆 Objetivos
 - [x] ~~Listagem de items~~
@@ -21,6 +36,7 @@ Para melhorar minhas hábilidades em typescript e requisição de api, além de 
 
   - [ReactJs](https://reactjs.org/) Montar o projeto
   - [Bootstrap Icons](https://icons.getbootstrap.com/) Estilo e icones
+  - [API do mercado livre](https://developers.mercadolivre.com.br/) Produtos
 </details>
 
 <details>
