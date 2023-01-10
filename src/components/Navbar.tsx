@@ -5,7 +5,7 @@ import Categories from './Categories';
 import { IPropsNavbar } from '../interfaces/IProps';
 
 function NavbarComponent(props: IPropsNavbar) {
-  const { categories } = props;
+  const { categories, notRedirect } = props;
   return(
     <header>
       <Navbar bg="light" variant="light">
@@ -16,7 +16,7 @@ function NavbarComponent(props: IPropsNavbar) {
           id="dropdown-categories"
           title="Categorias"
         >
-          { <Categories categories={ categories } /> }
+          { <Categories categories={ categories } notRedirect={ notRedirect } /> }
         </NavDropdown>
       </Navbar>
     </header>
@@ -24,6 +24,7 @@ function NavbarComponent(props: IPropsNavbar) {
 }
 
 Navbar.propTypes = {
+  notRedirect: PropTypes.bool,
   categories: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string,

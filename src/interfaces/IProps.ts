@@ -6,5 +6,6 @@ export interface BaseLayoutProps {
 }
 
 export interface IPropsNavbar {
-  categories: ICategories[]
+  categories: ICategories[],
+  notRedirect?: boolean,
 }
