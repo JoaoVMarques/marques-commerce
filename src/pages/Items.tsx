@@ -12,13 +12,19 @@ import fetchProductDetails from '../services/fetchProductDetails';
 function Items() {
   const { categories } = useContext(CategoriesContext) as ICategoriesContext;
   const [product, setProduct] = useState<IProductsDetails>();
-  const [description, setDescription] = useState();
+  const [description, setDescription] = useState<string>('');
   const { id } = useParams();
+  const noDescriptionText = 'O item não possui descrição :(';
 
   const fetchAPI = async() => {
     if(id) {
       setProduct(await fetchProductDetails.get(id));
-      setDescription(await fetchDescription.get(id));
+      const descriptionAPI: string = await fetchDescription.get(id);
+      if(descriptionAPI.length > 0) {
+        setDescription(descriptionAPI);
+        return;
+      }
+      setDescription(noDescriptionText);
     }
   };
 

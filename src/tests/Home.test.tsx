@@ -4,7 +4,6 @@ import Home from '../pages/Home';
 import renderWithRouter from './helpers/renderWithRouter';
 import mockFetch from './mocks/MockFetch';
 import { act } from 'react-dom/test-utils';
-import CARDS from './mocks/Cards';
 import App from '../App';
 
 describe('Testando /home', () => {
