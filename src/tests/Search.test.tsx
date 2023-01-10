@@ -5,24 +5,32 @@ import renderWithRouter from './helpers/renderWithRouter';
 import mockFetch from './mocks/MockFetch';
 import { act } from 'react-dom/test-utils';
 import CARDS from './mocks/Cards';
+import Search from '../pages/Search';
 
-describe('Testando /home', () => {
+describe('Testando /Search', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
 
-  describe('Titulo', () => {
-    it('verifica se o titulo aparece na tela', () => {
-      renderWithRouter(<Home />);
-      const linkElement = screen.getByText(/Marques-commerce/i);
-      expect(linkElement).toBeInTheDocument();
+  describe('Categorias', () => {
+    it('As categorias são chamadas com sucesso', async () => {
+      jest.spyOn(global, 'fetch').mockImplementation(mockFetch);
+      renderWithRouter(<Search />);
+      const categoryButton = screen.getByRole('button', {
+        name: /categorias/i
+      });
+      expect(categoryButton).toBeInTheDocument();
+      fireEvent.click(categoryButton);
+
+      const agroCategory = await screen.findByText(/Agro/i);
+      expect(agroCategory).toBeInTheDocument();
     });
   });
 
   describe('Cards', () => {
     it('Ao clicar nas categorias vao aparecer cards na tela', async () => {
       jest.spyOn(global, 'fetch').mockImplementation(mockFetch);
-      renderWithRouter(<Home />);
+      renderWithRouter(<Search />);
       const categoryButton = screen.getByRole('button', {
         name: /categorias/i
       });
