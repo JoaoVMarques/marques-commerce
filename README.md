@@ -15,6 +15,23 @@ Para melhorar minhas hábilidades em typescript e requisição de api, além de 
 - [ ] página de login e registro
 - [ ] estilizar totalmente página
 
+## 🚀 Instalação do projeto
+<details>
+  <summary>Instalação e execução com Docker</summary>
+  <br />
+
+  #### 1 - Clone o repositório
+  - Use o comando ```git clone git@github.com:JoaoVMarques/marques-commerce.git```
+  - Entre na pasta ```cd marques-commerce```
+
+  #### 2 - Instale as dependencias
+  - Instale as depencias ```npm i```
+  
+  #### 3 - Inicialize o projeto
+  - Para iniciar o projeto utilize ```npm start```
+  
+</details>
+
 ## Parte Tecnica
 <details>
   <summary><strong>🛠️ Ferramentas Utilizadas</strong></summary><br />
