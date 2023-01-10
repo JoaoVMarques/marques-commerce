@@ -5,6 +5,7 @@ import renderWithRouter from './helpers/renderWithRouter';
 import mockFetch from './mocks/MockFetch';
 import { act } from 'react-dom/test-utils';
 import CARDS from './mocks/Cards';
+import App from '../App';
 
 describe('Testando /home', () => {
   afterEach(() => {
@@ -20,9 +21,9 @@ describe('Testando /home', () => {
   });
 
   describe('Cards', () => {
-    it('Ao clicar nas categorias vao aparecer cards na tela', async () => {
+    it('Ao clicar na categoria o usúario vai ser redirecionado', async () => {
       jest.spyOn(global, 'fetch').mockImplementation(mockFetch);
-      renderWithRouter(<Home />);
+      renderWithRouter(<App />);
       const categoryButton = screen.getByRole('button', {
         name: /categorias/i
       });
@@ -35,11 +36,8 @@ describe('Testando /home', () => {
         fireEvent.click(await screen.findByText(/Agro/i));
       });
 
-      const {results} = CARDS;
-      for(const product of results) {
-        const productCard = await screen.findByText(`${product.title}`);
-        expect(productCard).toBeInTheDocument();
-      }
+      const PesquisaText = await screen.findByText(/pesquisa/i);
+      expect(PesquisaText).toBeInTheDocument();
     });
   });
 });

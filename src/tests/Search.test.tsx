@@ -1,6 +1,5 @@
 import React from 'react';
 import { fireEvent, screen } from '@testing-library/react';
-import Home from '../pages/Home';
 import renderWithRouter from './helpers/renderWithRouter';
 import mockFetch from './mocks/MockFetch';
 import { act } from 'react-dom/test-utils';

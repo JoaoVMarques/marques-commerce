@@ -10,6 +10,7 @@ function Search() {
     <>
       <NavbarComponent categories={ categories } notRedirect={ true } />
       { <Products /> }
+      Pesquisa
     </>
   );
 }
