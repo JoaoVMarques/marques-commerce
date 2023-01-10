@@ -7,7 +7,7 @@ function ProductsCard(props: { product: IProducts }) {
   const navigate = useNavigate();
   const { product } = props;
   return (
-    <Card onClick={ () => navigate(`item/${product.id}`) } className='product-card'>
+    <Card onClick={ () => navigate(`/item/${product.id}`) } className='product-card'>
       <Card.Img variant="top" src={ product.picture } />
       <hr />
       <Card.Body>

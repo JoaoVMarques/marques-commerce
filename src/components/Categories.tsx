@@ -13,9 +13,9 @@ function Categories(props: IPropsNavbar) {
   const navigate = useNavigate();
   const { categories, notRedirect } = props;
 
-  const redirectOrNot = (category : ICategories) => {
+  const redirectOrNot = (category : ICategories) => { 
     if(!notRedirect) {
-      navigate('search');
+      navigate('/search');
     }
     setProductsAPI(category.id);
   };
