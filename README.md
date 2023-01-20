@@ -9,7 +9,7 @@ Para melhorar minhas hábilidades em typescript e requisição de api, além de 
 
 ## 🚀 Instalação do projeto
 <details>
-  <summary>Instalação e execução com Docker</summary>
+  <summary>Instalação e execução</summary>
   
   #### 1 - Clone o repositório
   - Use o comando ```git clone git@github.com:JoaoVMarques/marques-commerce.git```
